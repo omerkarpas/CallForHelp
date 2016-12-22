@@ -77,6 +77,10 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RestSharp, Version=105.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.2\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -90,6 +94,14 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TextmagicRest, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TextmagicRest.1.0.0.2\lib\net45\TextmagicRest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Twilio.Api, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.4.7.2\lib\3.5\Twilio.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arduino.cs" />
@@ -106,18 +118,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -148,6 +162,90 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\alert_family_UI_alert.png" />
+    <None Include="Resources\alert_family_UI_alert1.png" />
+    <Content Include="Resources\alert_family_UI_alert_hover.png" />
+    <None Include="Resources\alert_family_UI_alert_hover1.png" />
+    <Content Include="Resources\alert_family_UI_alert_selected.png" />
+    <None Include="Resources\alert_family_UI_alert_selected1.png" />
+    <Content Include="Resources\alert_family_UI_house.png" />
+    <None Include="Resources\alert_family_UI_house1.png" />
+    <Content Include="Resources\alert_family_UI_house_hover.png" />
+    <None Include="Resources\alert_family_UI_house_hover1.png" />
+    <Content Include="Resources\alert_family_UI_house_selected.png" />
+    <None Include="Resources\alert_family_UI_house_selected1.png" />
+    <Content Include="Resources\alert_family_UI_p1.png" />
+    <None Include="Resources\alert_family_UI_p11.png" />
+    <Content Include="Resources\alert_family_UI_p1_hover.png" />
+    <None Include="Resources\alert_family_UI_p1_hover1.png" />
+    <Content Include="Resources\alert_family_UI_p1_selected.png" />
+    <None Include="Resources\alert_family_UI_p1_selected1.png" />
+    <Content Include="Resources\alert_family_UI_p2.png" />
+    <None Include="Resources\alert_family_UI_p21.png" />
+    <Content Include="Resources\alert_family_UI_p2_hover.png" />
+    <None Include="Resources\alert_family_UI_p2_hover1.png" />
+    <Content Include="Resources\alert_family_UI_p2_selected.png" />
+    <None Include="Resources\alert_family_UI_p2_selected1.png" />
+    <Content Include="Resources\alert_family_UI_p3.png" />
+    <None Include="Resources\alert_family_UI_p31.png" />
+    <Content Include="Resources\alert_family_UI_p3_hover.png" />
+    <None Include="Resources\alert_family_UI_p3_hover1.png" />
+    <Content Include="Resources\alert_family_UI_p3_selected.png" />
+    <None Include="Resources\alert_family_UI_p3_selected1.png" />
+    <Content Include="Resources\alert_family_UI_p4.png" />
+    <None Include="Resources\alert_family_UI_p41.png" />
+    <Content Include="Resources\alert_family_UI_p4_hover.png" />
+    <None Include="Resources\alert_family_UI_p4_hover1.png" />
+    <Content Include="Resources\alert_family_UI_p4_selected.png" />
+    <None Include="Resources\alert_family_UI_p4_selected1.png" />
+    <Content Include="Resources\alert_family_UI_SMS.png" />
+    <None Include="Resources\alert_family_UI_SMS1.png" />
+    <Content Include="Resources\alert_family_UI_SMS_hover.png" />
+    <None Include="Resources\alert_family_UI_SMS_hover1.png" />
+    <Content Include="Resources\alert_family_UI_SMS_selected.png" />
+    <None Include="Resources\alert_family_UI_SMS_selected1.png" />
+    <Content Include="Resources\alert_family_UI_tab_cleaning.png" />
+    <None Include="Resources\alert_family_UI_tab_cleaning1.png" />
+    <Content Include="Resources\alert_family_UI_tab_cleaning_hover.png" />
+    <None Include="Resources\alert_family_UI_tab_cleaning_hover1.png" />
+    <Content Include="Resources\alert_family_UI_tab_cleaning_selected.png" />
+    <None Include="Resources\alert_family_UI_tab_cleaning_selected1.png" />
+    <Content Include="Resources\alert_family_UI_tab_food.png" />
+    <None Include="Resources\alert_family_UI_tab_food1.png" />
+    <Content Include="Resources\alert_family_UI_tab_food_hover.png" />
+    <None Include="Resources\alert_family_UI_tab_food_hover1.png" />
+    <Content Include="Resources\alert_family_UI_tab_food_selected.png" />
+    <None Include="Resources\alert_family_UI_tab_food_selected1.png" />
+    <Content Include="Resources\alert_family_UI_tab_help.png" />
+    <None Include="Resources\alert_family_UI_tab_help1.png" />
+    <Content Include="Resources\alert_family_UI_tab_help_hover.png" />
+    <None Include="Resources\alert_family_UI_tab_help_hover1.png" />
+    <Content Include="Resources\alert_family_UI_tab_help_seelcted.png" />
+    <None Include="Resources\alert_family_UI_tab_help_seelcted1.png" />
+    <Content Include="Resources\alert_family_UI_tab_temperature.png" />
+    <None Include="Resources\alert_family_UI_tab_temperature1.png" />
+    <Content Include="Resources\alert_family_UI_tab_temperature_hover.png" />
+    <None Include="Resources\alert_family_UI_tab_temperature_hover1.png" />
+    <Content Include="Resources\alert_family_UI_tab_temperature_selected.png" />
+    <None Include="Resources\alert_family_UI_tab_temperature_selected1.png" />
+    <Content Include="Resources\alert_family_UI_tab_toilet.png" />
+    <None Include="Resources\alert_family_UI_tab_toilet1.png" />
+    <Content Include="Resources\alert_family_UI_tab_toilet_hover.png" />
+    <None Include="Resources\alert_family_UI_tab_toilet_hover1.png" />
+    <Content Include="Resources\alert_family_UI_tab_toilet_selected.png" />
+    <None Include="Resources\alert_family_UI_tab_toilet_selected1.png" />
+    <Content Include="Resources\alert_family_UI_tab_water.png" />
+    <None Include="Resources\alert_family_UI_tab_water1.png" />
+    <Content Include="Resources\alert_family_UI_tab_water_hover.png" />
+    <None Include="Resources\alert_family_UI_tab_water_hover1.png" />
+    <Content Include="Resources\alert_family_UI_tab_water_selected.png" />
+    <None Include="Resources\alert_family_UI_tab_water_selected1.png" />
+    <Content Include="Resources\alert_family_UI_tab_write.png" />
+    <None Include="Resources\alert_family_UI_tab_write1.png" />
+    <Content Include="Resources\alert_family_UI_tab_write_hover.png" />
+    <None Include="Resources\alert_family_UI_tab_write_hover1.png" />
+    <Content Include="Resources\alert_family_UI_tab_write_selected.png" />
+    <None Include="Resources\alert_family_UI_tab_write_selected1.png" />
     <Content Include="Treetog-Junior-Help.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

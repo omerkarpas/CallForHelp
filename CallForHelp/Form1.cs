@@ -6,121 +6,253 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Net.Http;
 using System.Configuration;
+using Twilio;
+
 
 namespace CallForHelp
 {
     public partial class Form1 : Form
     {
-        private readonly string _webReuestUrl = "https://maker.ifttt.com/trigger/{event}/with/key/{IFTTTUID}";
-        readonly string _iftttuid = ConfigurationManager.AppSettings["IFTTTUID"];
-        readonly string _DefaultRing = ConfigurationManager.AppSettings["DefaultRing"];
-        readonly string _DefaultSms = ConfigurationManager.AppSettings["DefaultSms"];
-        readonly string _DefaultMail = ConfigurationManager.AppSettings["DefaultMail"];
+        //private readonly string _webReuestUrl = "https://maker.ifttt.com/trigger/{event}/with/key/{IFTTTUID}";
+        //readonly string _iftttuid = ConfigurationManager.AppSettings["IFTTTUID"];
+        //readonly string _defaultRing = ConfigurationManager.AppSettings["DefaultRing"];
+        //readonly string _defaultSms = ConfigurationManager.AppSettings["DefaultSms"];
+        //readonly string _defaultMail = ConfigurationManager.AppSettings["DefaultMail"];
 
-        readonly string _RingEventName = ConfigurationManager.AppSettings["RingEventName"];
-        readonly string _SmsEventName = ConfigurationManager.AppSettings["SmsEventName"];
-        readonly string _MailEventName = ConfigurationManager.AppSettings["MailEventName"];
+        //readonly string _ringEventName = ConfigurationManager.AppSettings["RingEventName"];
+        //readonly string _smsEventName = ConfigurationManager.AppSettings["SmsEventName"];
+        //readonly string _mailEventName = ConfigurationManager.AppSettings["MailEventName"];
 
-        readonly string _UserOption1 = ConfigurationManager.AppSettings["UserOption1"];
-        readonly string _UserOption2 = ConfigurationManager.AppSettings["UserOption2"];
+        //readonly string _userOption1 = ConfigurationManager.AppSettings["UserOption1"];
+        //readonly string _userOption2 = ConfigurationManager.AppSettings["UserOption2"];
 
-        private string RadioButtonSelectedValue = "";
+        enum options
+        {
+            Food,
+            Toilet,
+            Water,
+            Suction,
+            HotCold,
+            Other
+        }
+
+
+        private string _radioButtonSelectedValue = "";
+
+        private const string twilloNumber = "+972526001364";
+        private bool sendSmsBtnClickState = false;
+        private bool sendAlertBtnClickState = true;
+        private bool foodBtnClickState = false;
+        private bool hotcoldBtnClickState = false;
+        private bool otherBtnClickState = false;
+        private bool toiletBtnClickState = false;
+        private bool suctionBtnClickState = false;
+        private bool waterBtnClickState = false;
 
 
         public Form1()
         {
             InitializeComponent();
-            _webReuestUrl = _webReuestUrl.Replace("{IFTTTUID}", _iftttuid);
-            if (_DefaultRing.ToLower() == "true") chkboxRingBell.Checked = true;
-            if (_DefaultSms.ToLower() == "true") chkboxSms.Checked = true;
-            if (_DefaultMail.ToLower() == "true") chkboxMail.Checked = true;
+            //_webReuestUrl = _webReuestUrl.Replace("{IFTTTUID}", _iftttuid);
+            //if (_defaultRing.ToLower() == "true") chkboxRingBell.Checked = true;
+            //if (_defaultSms.ToLower() == "true") chkboxSms.Checked = true;
+            //if (_defaultMail.ToLower() == "true") chkboxMail.Checked = true;
 
 
-            if (_UserOption1 != "") rBtnUser1.Visible = true;
-            if (_UserOption2 != "") rBtnUser2.Visible = true;
+            //if (_userOption1 != "") rBtnUser1.Visible = true;
+            //if (_userOption2 != "") rBtnUser2.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+            
+        //    if (rBtnFreeText.Checked)
+        //    {
+        //        _radioButtonSelectedValue = richTextBox1.Text;
+        //    }
+            
+        //    if (chkboxSms.Checked)
+        //        SendPostMesage(_smsEventName, _radioButtonSelectedValue);
+        //    if (chkboxMail.Checked)
+        //        SendPostMesage(_mailEventName, _radioButtonSelectedValue);
+        //    if (chkboxRingBell.Checked)
+        //        SendPostMesage(_ringEventName, _radioButtonSelectedValue);
+        //}
+
+        //private async void SendPostMesage(string eventName, string value1 = "", string value2 = "", string value3 = "")
+        //{
+        //    string webReuestUrl = _webReuestUrl.Replace("{event}", eventName);
+            
+        //    using (var client = new HttpClient())
+        //    {
+        //        var values = new Dictionary<string, string>
+        //        {
+        //           { "value1", value1 },
+        //           { "value2", value2 },
+        //           { "value3", value3 }
+        //        };
+
+        //        var content = new FormUrlEncodedContent(values);
+        //        var response = await client.PostAsync(webReuestUrl, content);
+        //        var responseString = await response.Content.ReadAsStringAsync();
+        //    }
+        //}
+
+        //private void CheckedChanged(object sender, EventArgs e)
+        //{
+        //    var cb = (CheckBox) sender;
+        //    cb.BackColor = cb.Checked ? Color.Green : Color.FromKnownColor(KnownColor.Control);
+        //}
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            var rb = (Button)sender;
+            _radioButtonSelectedValue = rb.Name.ToLower();
+            textBox.Text = "I want " + rb.Name.ToLower();
+        }
+
+        private void SendSmsUsingTwillo(string to,string body)
+        {
+            string AccountSid = "AC629dd9f188d9fbf3b81a04838e3aafd8";
+            string AuthToken = "ce8cc33f6629b48e2943e48811eec081";
+            var twilio = new TwilioRestClient(AccountSid, AuthToken);
+
+            var message = twilio.SendMessage(twilloNumber, to, body);
+            Console.WriteLine(message.Sid);
+        }
+
+        private void WriteToComPort(SerialPort port,string s)
+        {
+            port.Open();
+            port.WriteLine(s.ToLower());
+            Thread.Sleep(1000);
+            port.WriteLine(s.ToUpper());
+            port.Close();
+        }
+
+        private void RingBell(string aToDBellId)
         {
             string[] ports = SerialPort.GetPortNames();
             foreach (string port in ports)
             {
                 try
                 {
-                    var Port = new SerialPort(port, 9600);
-                    Port.Open();
-                    Port.WriteLine("H");
-                    Thread.Sleep(100);
-                    Port.WriteLine("L");
-                    Port.Close();
+                    var _port = new SerialPort(port, 9600);
+                    WriteToComPort(_port, aToDBellId);
                 }
-                catch (Exception){}
+                catch (Exception) { }
             }
-            
-            //var currentPort = new SerialPort("COM8", 9600);
-            //currentPort.Open();
-            //currentPort.WriteLine("H");
-            //System.Threading.Thread.Sleep(2000);
-            //currentPort.WriteLine("L");
-            //currentPort.Close();
 
-            if (rBtnFreeText.Checked)
-            {
-                RadioButtonSelectedValue = richTextBox1.Text;
-            }
-            
-            if (chkboxSms.Checked)
-                SendPostMesage(_SmsEventName, RadioButtonSelectedValue);
-            if (chkboxMail.Checked)
-                SendPostMesage(_MailEventName, RadioButtonSelectedValue);
-            if (chkboxRingBell.Checked)
-                SendPostMesage(_RingEventName, RadioButtonSelectedValue);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void sms_Click(object sender, EventArgs e)
         {
-            Close();
+            clickBtnChangeState(ref sendSmsBtnClickState);
         }
 
-        private async void SendPostMesage(string eventName, string value1 = "", string value2 = "", string value3 = "")
+        private void All_Click(object sender, EventArgs e)
         {
-            string webReuestUrl = _webReuestUrl.Replace("{event}", eventName);
-            
-            using (var client = new HttpClient())
+            if (sendAlertBtnClickState)
             {
-                var values = new Dictionary<string, string>
-                {
-                   { "value1", value1 },
-                   { "value2", value2 },
-                   { "value3", value3 }
-                };
-
-                var content = new FormUrlEncodedContent(values);
-                var response = await client.PostAsync(webReuestUrl, content);
-                var responseString = await response.Content.ReadAsStringAsync();
+                RingBell("A");
+            }
+            if (sendSmsBtnClickState)
+            {
+                SendSmsUsingTwillo("+972526837504",textBox.Text);
             }
         }
 
-        private void CheckedChanged(object sender, EventArgs e)
+          void FoodBtn_MouseHover(object sender, EventArgs e)
+          {
+              //Food.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.other));
+          }
+
+          void FoodBtn_MouseLeave(object sender, EventArgs e)
+          {
+              //Food.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.food));
+          }
+
+        private void Alert_Click(object sender, EventArgs e)
         {
-            var cb = (CheckBox) sender;
-            cb.BackColor = cb.Checked ? Color.Green : Color.FromKnownColor(KnownColor.Control);
+            clickBtnChangeState(ref sendAlertBtnClickState);
         }
 
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        //private void Food_Click(object sender, EventArgs e)
+        //{
+        //    OpptionBtnClicked(foodBtnClickState);
+        //    textBox.Text = "i want Food";
+        //}
+
+        private void clickBtnChangeState(ref bool buttonState)
         {
-            var rb = (RadioButton)sender;
-            if (rb.Text.ToLower() == "free text")
+            if (buttonState == false)
+                buttonState = true;
+            else if (buttonState)
+                buttonState = false;
+        }
+
+        private void disableAllButtons()
+        {
+             foodBtnClickState = false;
+             hotcoldBtnClickState = false;
+             otherBtnClickState = false;
+             toiletBtnClickState = false;
+             suctionBtnClickState = false;
+             waterBtnClickState = false;
+        }
+
+        private void OptionBtnClicked(bool buttonState)
+        {
+            disableAllButtons();
+            clickBtnChangeState(ref buttonState);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Other_Click(object sender, EventArgs e)
+        {
+            textBox.Text = "I want ";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (sendAlertBtnClickState)
             {
-                richTextBox1.Visible = true;
-                //RadioButtonSelectedValue = richTextBox1.Text;
-            }
-            else
-            {
-                richTextBox1.Visible = false;
-                RadioButtonSelectedValue = rb.Text;
+                RingBell("B");
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (sendAlertBtnClickState)
+            {
+                RingBell("C");
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (sendAlertBtnClickState)
+            {
+                RingBell("D");
+            }
+        }
+
+        private void General_Click(object sender, EventArgs e)
+        {
+            textBox.Text = "I Need Something ";
+        }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
 
     }
 }
