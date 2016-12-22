@@ -118,130 +118,160 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
- <data name="alert_family_UI_alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_alert1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="alert_family_UI_alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_alert_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_alert_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_alert_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_alert_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_alert_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_alert_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_house" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_house1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_house.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_house_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_house_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_house_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_house_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_house_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_house_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_house_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_house_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_p1_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_p1_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p1_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p1_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p1_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p1_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p1_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p1_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_p2_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_p2_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p2_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p2_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p2_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p2_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p2_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p2_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_p3_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_p3_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p3_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p3_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p3_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p3_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p3_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p3_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_p4_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_p4_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p4_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p4_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p4_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_p4_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_p4_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_p4_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_p5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_p5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_p5_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_p5_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_p5_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_p5_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_p5_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_p5_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_SMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_SMS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_SMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_SMS_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_SMS_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_SMS_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_SMS_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_SMS_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_SMS_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_cleaning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_cleaning1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_cleaning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_cleaning_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_cleaning_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_cleaning_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_cleaning_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_cleaning_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_cleaning_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_food" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_food1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_food.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_food_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_food_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_food_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_food_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_food_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_food_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_help1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_help_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_help_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_help_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_help_seelcted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_help_seelcted1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_help_seelcted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_temperature" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_temperature1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_temperature.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_temperature_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_temperature_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_temperature_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_temperature_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_temperature_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_temperature_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_toilet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_toilet1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_toilet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_toilet_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_toilet_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_toilet_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_toilet_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_toilet_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_toilet_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_water" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_water1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_water.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_water_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_water_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_water_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_water_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_water_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_water_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_write" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_write1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_write.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_write_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_write_hover1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_write_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alert_family_UI_tab_write_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_family_UI_tab_write_selected1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\alert_family_UI_tab_write_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert_family_UI_UI_screenshot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_family_UI_UI_screenshot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

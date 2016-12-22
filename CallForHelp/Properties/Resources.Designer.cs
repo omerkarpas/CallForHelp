@@ -103,6 +103,16 @@ namespace CallForHelp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_house_disabled {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_house_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alert_family_UI_house_hover {
             get {
                 object obj = ResourceManager.GetObject("alert_family_UI_house_hover", resourceCulture);
@@ -126,6 +136,16 @@ namespace CallForHelp.Properties {
         internal static System.Drawing.Bitmap alert_family_UI_p1 {
             get {
                 object obj = ResourceManager.GetObject("alert_family_UI_p1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_p1_disabled {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_p1_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +183,16 @@ namespace CallForHelp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_p2_disabled {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_p2_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alert_family_UI_p2_hover {
             get {
                 object obj = ResourceManager.GetObject("alert_family_UI_p2_hover", resourceCulture);
@@ -186,6 +216,16 @@ namespace CallForHelp.Properties {
         internal static System.Drawing.Bitmap alert_family_UI_p3 {
             get {
                 object obj = ResourceManager.GetObject("alert_family_UI_p3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_p3_disabled {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_p3_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +263,16 @@ namespace CallForHelp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_p4_disabled {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_p4_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alert_family_UI_p4_hover {
             get {
                 object obj = ResourceManager.GetObject("alert_family_UI_p4_hover", resourceCulture);
@@ -236,6 +286,46 @@ namespace CallForHelp.Properties {
         internal static System.Drawing.Bitmap alert_family_UI_p4_selected {
             get {
                 object obj = ResourceManager.GetObject("alert_family_UI_p4_selected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_p5 {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_p5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_p5_disabled {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_p5_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_p5_hover {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_p5_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_p5_selected {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_p5_selected", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -476,6 +566,16 @@ namespace CallForHelp.Properties {
         internal static System.Drawing.Bitmap alert_family_UI_tab_write_selected {
             get {
                 object obj = ResourceManager.GetObject("alert_family_UI_tab_write_selected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert_family_UI_UI_screenshot {
+            get {
+                object obj = ResourceManager.GetObject("alert_family_UI_UI_screenshot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
