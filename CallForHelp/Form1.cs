@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Drawing;
 using System.IO.Ports;
 using System.Threading;
@@ -11,17 +12,18 @@ namespace CallForHelp
     public partial class Form1 : Form
     {
         //private readonly string _webReuestUrl = "https://maker.ifttt.com/trigger/{event}/with/key/{IFTTTUID}";
-        //readonly string _iftttuid = ConfigurationManager.AppSettings["IFTTTUID"];
-        //readonly string _defaultRing = ConfigurationManager.AppSettings["DefaultRing"];
-        //readonly string _defaultSms = ConfigurationManager.AppSettings["DefaultSms"];
-        //readonly string _defaultMail = ConfigurationManager.AppSettings["DefaultMail"];
+        readonly string _defaultRingState = ConfigurationManager.AppSettings["DefaultRingState"];
+        readonly string _defaultSmsState = ConfigurationManager.AppSettings["DefaultSmsState"];
 
-        //readonly string _ringEventName = ConfigurationManager.AppSettings["RingEventName"];
-        //readonly string _smsEventName = ConfigurationManager.AppSettings["SmsEventName"];
-        //readonly string _mailEventName = ConfigurationManager.AppSettings["MailEventName"];
+        readonly string _helper1Number = ConfigurationManager.AppSettings["Helper1Number"];
+        readonly string _helper2Number = ConfigurationManager.AppSettings["Helper2Number"];
+        readonly string _helper3Number = ConfigurationManager.AppSettings["Helper3Number"];
+        readonly string _helper4Number = ConfigurationManager.AppSettings["Helper4Number"];
 
-        //readonly string _userOption1 = ConfigurationManager.AppSettings["UserOption1"];
-        //readonly string _userOption2 = ConfigurationManager.AppSettings["UserOption2"];
+
+        readonly string _twilloNumber = ConfigurationManager.AppSettings["TwilloNumber"];
+        readonly string _accountSid = ConfigurationManager.AppSettings["AccountSid"];
+        readonly string _authToken = ConfigurationManager.AppSettings["AuthToken"];
 
         enum OptionsEnum
         {
@@ -34,56 +36,50 @@ namespace CallForHelp
             Other
         }
 
-
         private string _radioButtonSelectedValue = OptionsEnum.General.ToString();
-
-        //private const string TwilloNumber = "+972526001364";
-        //const string AccountSid = "AC629dd9f188d9fbf3b81a04838e3aafd8";
-        //const string AuthToken = "ce8cc33f6629b48e2943e48811eec081";
-
-
-        private const string TwilloNumber = "+972526001357";
-        const string AccountSid = "AC2f112cd06bd10bd8c97c9d6fefd03c4a";
-        const string AuthToken = "7258bc704f7a38b6c53fe4c88debbb73";
 
         private bool _sendSmsBtnClickState = false;
         private bool _sendAlertBtnClickState = true;
-        //private bool foodBtnClickState = false;
-        //private bool hotcoldBtnClickState = false;
-        //private bool otherBtnClickState = false;
-        //private bool toiletBtnClickState = false;
-        //private bool suctionBtnClickState = false;
-        //private bool waterBtnClickState = false;
-
-
+        
         public Form1()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Location = new Point(0, Screen.PrimaryScreen.WorkingArea.Height - Height);
-            //if (_defaultRing.ToLower() == "true") chkboxRingBell.Checked = true;
-            //if (_defaultSms.ToLower() == "true") chkboxSms.Checked = true;
+            if (_defaultRingState.ToLower()=="true")
+            {
+                _sendAlertBtnClickState = true;
+                Alert.BackgroundImage = ((Properties.Resources.alert_family_UI_alert_selected));
+            }
+            else
+            {
+                _sendAlertBtnClickState = false;
+                Alert.BackgroundImage = ((Properties.Resources.alert_family_UI_alert));
+            }
+
+            if (_defaultSmsState.ToLower() == "true")
+            {
+                _sendSmsBtnClickState = true;
+                sms.BackgroundImage = ((Properties.Resources.alert_family_UI_SMS_selected));
+            }
+            else
+            {
+                _sendSmsBtnClickState = false;
+                sms.BackgroundImage = ((Properties.Resources.alert_family_UI_SMS));
+            }
+            if (_sendSmsBtnClickState == false && _sendAlertBtnClickState==false)
+                DisableAllPeople();
+            else
+            {
+                EnableAllPeople();
+            }
+
         }
-
-        //private void CheckedChanged(object sender, EventArgs e)
-        //{
-        //    var cb = (CheckBox) sender;
-        //    cb.BackColor = cb.Checked ? Color.Green : Color.FromKnownColor(KnownColor.Control);
-        //}
-
-        //private void radioButton_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    var rb = (Button)sender;
-        //    _radioButtonSelectedValue = rb.Name.ToLower();
-        //    textBox.Text = "I want " + rb.Name.ToLower();
-        //}
 
         private void SendSmsUsingTwillo(string to,string body)
         {
-
-            var twilio = new TwilioRestClient(AccountSid, AuthToken);
-
-            var message = twilio.SendMessage(TwilloNumber, "Roee:"+ to, body);
-            Console.WriteLine(message.Sid);
+            var twilio = new TwilioRestClient(_accountSid, _authToken);
+            var state = twilio.SendMessage(_twilloNumber, to, "Roee:" + body);
         }
 
         private void WriteToComPort(SerialPort port,string s)
@@ -118,7 +114,7 @@ namespace CallForHelp
                 sms.BackgroundImage = ((Properties.Resources.alert_family_UI_SMS_selected));
                 EnableAllPeople();
             }
-                
+
             else if (_sendSmsBtnClickState)
             {
                 _sendSmsBtnClickState = false;
@@ -164,7 +160,7 @@ namespace CallForHelp
             textBox.ForeColor = SystemColors.WindowText;
             if (_radioButtonSelectedValue == OptionsEnum.Food.ToString())
                 return;
-            disableAllButtons();
+            DisableAllButtons();
             textBox.Text = "I want food";
             _radioButtonSelectedValue = OptionsEnum.Food.ToString();
             Food.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_food_selected));
@@ -190,7 +186,7 @@ namespace CallForHelp
             textBox.ForeColor = SystemColors.WindowText;
             if (_radioButtonSelectedValue == OptionsEnum.Toilet.ToString())
                 return;
-            disableAllButtons();
+            DisableAllButtons();
             textBox.Text = "I need to go to the restroom";
             _radioButtonSelectedValue = OptionsEnum.Toilet.ToString();
             Toilet.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_toilet_selected));
@@ -216,7 +212,7 @@ namespace CallForHelp
             textBox.ForeColor = SystemColors.WindowText;
             if (_radioButtonSelectedValue == OptionsEnum.Water.ToString())
                 return;
-            disableAllButtons();
+            DisableAllButtons();
             textBox.Text = "I want water";
             _radioButtonSelectedValue = OptionsEnum.Water.ToString();
             Water.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_water_selected));
@@ -243,7 +239,7 @@ namespace CallForHelp
             textBox.ForeColor = SystemColors.WindowText;
             if (_radioButtonSelectedValue == OptionsEnum.HotCold.ToString())
                 return;
-            disableAllButtons();
+            DisableAllButtons();
             textBox.Text = "I feel too hot or too cold";
             _radioButtonSelectedValue = OptionsEnum.HotCold.ToString();
             HotCold.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_temperature_selected));
@@ -271,7 +267,7 @@ namespace CallForHelp
             textBox.ForeColor = SystemColors.WindowText;
             if (_radioButtonSelectedValue == OptionsEnum.Suction.ToString())
                 return;
-            disableAllButtons();
+            DisableAllButtons();
             textBox.Text = "I need suction";
             _radioButtonSelectedValue = OptionsEnum.Suction.ToString();
             Suction.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_cleaning_selected));
@@ -296,7 +292,7 @@ namespace CallForHelp
         {
             if (_radioButtonSelectedValue == OptionsEnum.Other.ToString())
                 return;
-            disableAllButtons();
+            DisableAllButtons();
             textBox.Text = "Enter text here";
             textBox.ForeColor = Color.Gray;
             _radioButtonSelectedValue = OptionsEnum.Other.ToString();
@@ -323,7 +319,7 @@ namespace CallForHelp
             textBox.ForeColor = SystemColors.WindowText;
             if (_radioButtonSelectedValue == OptionsEnum.General.ToString())
                 return;
-            disableAllButtons();
+            DisableAllButtons();
             textBox.Text = "I need something... ";
             _radioButtonSelectedValue = OptionsEnum.General.ToString();
             General.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_help_seelcted));
@@ -363,6 +359,7 @@ namespace CallForHelp
             }
         }
 
+
         private void DisableAllPeople()
         {
             help1.BackgroundImage = ((Properties.Resources.alert_family_UI_p5_disabled));
@@ -387,30 +384,22 @@ namespace CallForHelp
             help4.Enabled = true;
         }
 
-        private void Alert_Hover(object sender, EventArgs e)
-        {
-            if (_sendAlertBtnClickState == false)
-            {
-                _sendAlertBtnClickState = true;
-                Alert.BackgroundImage = ((Properties.Resources.alert_family_UI_alert_selected));
-            }
-
-            else if (_sendAlertBtnClickState)
-            {
-                _sendAlertBtnClickState = false;
-                Alert.BackgroundImage = ((Properties.Resources.alert_family_UI_alert));
-            }
-        }
-
-        //private void Food_Click(object sender, EventArgs e)
+        //private void Alert_Hover(object sender, EventArgs e)
         //{
-        //    OpptionBtnClicked(foodBtnClickState);
-        //    textBox.Text = "i want Food";
+        //    if (_sendAlertBtnClickState == false)
+        //    {
+        //        _sendAlertBtnClickState = true;
+        //        Alert.BackgroundImage = ((Properties.Resources.alert_family_UI_alert_selected));
+        //    }
+
+        //    else if (_sendAlertBtnClickState)
+        //    {
+        //        _sendAlertBtnClickState = false;
+        //        Alert.BackgroundImage = ((Properties.Resources.alert_family_UI_alert));
+        //    }
         //}
 
-
-
-        private void disableAllButtons()
+        private void DisableAllButtons()
         {
             Food.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_food));
             Toilet.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_toilet));
@@ -420,12 +409,6 @@ namespace CallForHelp
             General.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_help));
             HotCold.BackgroundImage = ((Properties.Resources.alert_family_UI_tab_temperature));
         }
-
-        //private void OptionBtnClicked(bool buttonState)
-        //{
-        //    disableAllButtons();
-        //    clickBtnChangeState(ref buttonState);
-        //}
 
         private void Help1_Click(object sender, EventArgs e)
         {
@@ -440,7 +423,7 @@ namespace CallForHelp
             }
             if (_sendSmsBtnClickState)
             {
-                SendSmsUsingTwillo("+972542000228", textBox.Text);
+                SendSmsUsingTwillo(_helper1Number, textBox.Text);
             }
         }
 
@@ -470,9 +453,8 @@ namespace CallForHelp
             }
             if (_sendSmsBtnClickState)
             {
-                //SendSmsUsingTwillo("+972526837504",textBox.Text);
+                SendSmsUsingTwillo(_helper2Number, textBox.Text);
             }
-            //Thread.Sleep(3000);
         }
 
         private void Help2_Hover(object sender, EventArgs e)
@@ -487,9 +469,7 @@ namespace CallForHelp
         {
             help2.BackgroundImage = ((Properties.Resources.alert_family_UI_p1));
         }
-
-
-
+        
         private void Help3_Click(object sender, EventArgs e)
         {
             if (_sendAlertBtnClickState || _sendSmsBtnClickState)
@@ -503,9 +483,8 @@ namespace CallForHelp
             }
             if (_sendSmsBtnClickState)
             {
-                //SendSmsUsingTwillo("+972526837504",textBox.Text);
+                SendSmsUsingTwillo(_helper3Number, textBox.Text);
             }
-            //Thread.Sleep(3000);
         }
 
         private void Help3_Hover(object sender, EventArgs e)
@@ -534,9 +513,8 @@ namespace CallForHelp
             }
             if (_sendSmsBtnClickState)
             {
-                //SendSmsUsingTwillo("+972526837504",textBox.Text);
+                SendSmsUsingTwillo(_helper4Number, textBox.Text);
             }
-            //Thread.Sleep(3000);
         }
 
         private void Help4_Hover(object sender, EventArgs e)
